@@ -1,0 +1,28 @@
+{
+  "name": "nodejs-study-2",
+  "version": "1.0.0",
+  "description": "This is a nodejs server for studying, follow the Udemy's NodeJS course",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:dev": "env-cmd -f .env nodemon src/app.js",
+    "start:uat": "env-cmd -f .env.uat nodemon src/app.js"
+  },
+  "author": "vien.truong",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.4",
+    "env-cmd": "^10.1.0",
+    "eslint": "^7.32.0 || ^8.2.0",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "mysql2": "^3.9.1",
+    "nodemon": "^3.0.3",
+    "sequelize": "^6.37.2"
+  },
+  "devDependencies": {
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.25.2"
+  }
+}
