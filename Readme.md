@@ -24,7 +24,7 @@ This is a basic NodeJS project that is build for studying purpose
 
 
 ##
-<div style='display: flex; justify-content: center'>
+<div style='display: flex; justify-content: center; gap: 20px; flex-wrap: wrap'>
   <a href="https://expressjs.com/" target="_blank">
     <img src="https://expressjs.com/images/express-facebook-share.png" alt="expressjs" title="ExpressJS" min-width="40" height="40"/>
   </a>
