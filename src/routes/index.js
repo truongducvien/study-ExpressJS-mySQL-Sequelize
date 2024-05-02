@@ -3,6 +3,7 @@ const { usersRouter } = require('./users.route');
 const { PATH } = require('../constant/path');
 const { productsRouter } = require('./products.router');
 const { cartRouter } = require('./carts.router');
+const { authRouter } = require('./auth.router');
 
 const router = express.Router();
 
@@ -10,6 +11,7 @@ const ROUTER_MAPPING = [
   [PATH.USERS, usersRouter],
   [PATH.PRODUCTS, productsRouter],
   [PATH.CARTS, cartRouter],
+  [PATH.AUTH, authRouter],
 ];
 
 ROUTER_MAPPING.forEach(([route, routeControl]) =>

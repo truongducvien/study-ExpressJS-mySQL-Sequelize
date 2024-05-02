@@ -10,4 +10,7 @@ const MESSAGES = {
   USER_EXISTED: 'This user has already existed',
 };
 
-module.exports = { MESSAGES };
+// Temporary memory for session:
+const sessions = [];
+
+module.exports = { MESSAGES, sessions };

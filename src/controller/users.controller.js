@@ -1,4 +1,4 @@
-const { MESSAGES } = require('../constant/common');
+const { MESSAGES, sessions } = require('../constant/common');
 const { RES_CREATED_SUCCESS } = require('../constant/res-status');
 const { User } = require('../model');
 const { checkExisted } = require('../utils');
@@ -8,11 +8,17 @@ const {
   sendBadRequestError,
   sendPostSuccess,
 } = require('../utils');
+const { sendUnauthorizedError } = require('../utils/res-send');
 
 const getList = async (req, res) => {
   try {
-    const users = await User.findAll();
-    sendGetSuccess(res, users);
+    const { signedCookies } = req;
+    if (sessions.includes(signedCookies?.sessionId)) {
+      const users = await User.findAll();
+      sendGetSuccess(res, users);
+    } else {
+      sendUnauthorizedError(res);
+    }
   } catch (error) {
     sendError(res, error);
   }

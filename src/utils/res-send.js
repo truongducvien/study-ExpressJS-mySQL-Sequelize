@@ -6,6 +6,7 @@ const {
   RES_CREATED_SUCCESS,
   RES_UPDATED_SUCCESS,
   RES_DELETED_SUCCESS,
+  RES_UNAUTHORIZED,
 } = require('../constant/res-status');
 
 // ===========================  SUCCESS RESPONSE: ===========================
@@ -106,6 +107,18 @@ const sendBadRequestError = (res, message) => {
   });
 };
 
+/**
+ * Send unauthorized error (400) response to client:
+ * @param {any} res Middleware's response
+ * @param {string | string[]} message
+ */
+const sendUnauthorizedError = (res, message) => {
+  sendError(res, {
+    status: RES_UNAUTHORIZED.status,
+    message: message || RES_UNAUTHORIZED.message,
+  });
+};
+
 module.exports = {
   sendSuccess,
   sendGetSuccess,
@@ -114,4 +127,5 @@ module.exports = {
   sendDeleteSuccess,
   sendError,
   sendBadRequestError,
+  sendUnauthorizedError,
 };

@@ -11,6 +11,8 @@
   "author": "vien.truong",
   "license": "ISC",
   "dependencies": {
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.4",
     "env-cmd": "^10.1.0",
     "eslint": "^7.32.0 || ^8.2.0",
